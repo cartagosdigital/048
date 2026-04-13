@@ -3,7 +3,7 @@
 import BeforeAfterSlider from '@/components/BeforeAfterSlider'
 import ScrollReveal from '@/components/ScrollReveal'
 
-const WA_NUMBER = '5548999999999' // Trocar pelo número real
+const WA_NUMBER = '5548999768556'
 const WA_MESSAGE = encodeURIComponent('Olá! Gostaria de um orçamento para higienização do meu estofado.')
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`
 
