@@ -34,7 +34,7 @@ export default function Home() {
             <img
               src="/images/logo.png"
               alt="048 Higienização de Estofados"
-              className="h-20 w-auto object-contain"
+              className="h-[60px] w-auto object-contain"
             />
           </div>
 
@@ -170,21 +170,11 @@ export default function Home() {
                 '/images/foto-2.jpg',
                 '/images/foto-3.jpg',
                 '/images/foto-4.jpg',
-              ].map((_src, i) => (
+              ].map((src, i) => (
                 <ScrollReveal key={i} delay={i * 80}>
                   <div className="aspect-square rounded-lg overflow-hidden bg-sand">
-                    <div className="w-full h-full bg-sand/80 flex items-center justify-center">
-                      <div className="text-center p-4">
-                        <div className="w-12 h-12 rounded-full bg-navy/10 flex items-center justify-center mx-auto mb-2">
-                          <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#071952" strokeWidth="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="m21 15-5-5L5 21"/>
-                          </svg>
-                        </div>
-                        <p className="font-body text-navy/40 text-xs">Adicionar foto</p>
-                      </div>
-                    </div>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={src} alt={`Resultado ${i + 1}`} className="w-full h-full object-cover" />
                   </div>
                 </ScrollReveal>
               ))}
@@ -400,25 +390,35 @@ export default function Home() {
                 </div>
               </ScrollReveal>
 
-              {/* Water drop effect card */}
+              {/* Impermeabilização card com imagem */}
               <ScrollReveal delay={200}>
-                <div className="relative">
-                  <div className="bg-cream/5 border border-cream/10 rounded-2xl p-10 text-center backdrop-blur-sm">
-                    {/* Water drop icon */}
-                    <div className="w-24 h-24 mx-auto mb-6 bg-gold/10 rounded-full flex items-center justify-center border border-gold/20">
-                      <svg width="40" height="48" viewBox="0 0 40 48" fill="none">
-                        <path d="M20 4 Q30 16 34 28 Q36 40 20 44 Q4 40 6 28 Q10 16 20 4Z" stroke="#D4A843" strokeWidth="2" fill="rgba(212,168,67,0.1)"/>
+                <div className="relative rounded-2xl overflow-hidden border border-cream/10">
+                  {/* Imagem de fundo */}
+                  <div className="aspect-[4/3] relative">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/images/impermeabilizacao.jpg"
+                      alt="Impermeabilização de estofados"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-navy/60" />
+                  </div>
+                  {/* Texto sobre a imagem */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-gold/20 rounded-full flex items-center justify-center border border-gold/30">
+                      <svg width="32" height="38" viewBox="0 0 40 48" fill="none">
+                        <path d="M20 4 Q30 16 34 28 Q36 40 20 44 Q4 40 6 28 Q10 16 20 4Z" stroke="#D4A843" strokeWidth="2" fill="rgba(212,168,67,0.15)"/>
                         <path d="M14 34 Q16 38 20 39" stroke="#D4A843" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                     </div>
                     <h3 className="font-display text-cream text-3xl font-semibold mb-3">
                       Impermeabilização
                     </h3>
-                    <p className="font-body text-cream/55 leading-relaxed mb-6">
+                    <p className="font-body text-cream/75 leading-relaxed mb-6 text-sm">
                       Proteja seu estofado contra líquidos e manchas após a limpeza.
                       A gota d'água literalmente escorrega.
                     </p>
-                    <span className="inline-block font-body text-gold text-sm border border-gold/30 rounded-full px-5 py-2">
+                    <span className="inline-block font-body text-gold text-sm border border-gold/40 rounded-full px-5 py-2 backdrop-blur-sm">
                       Pergunte sobre este serviço →
                     </span>
                   </div>

@@ -8,6 +8,11 @@ const SLOTS = [
   { key: 'depois-1', label: 'Sofá — DEPOIS (limpo)', folder: 'images' },
   { key: 'antes-2', label: 'Poltrona — ANTES (suja)', folder: 'images' },
   { key: 'depois-2', label: 'Poltrona — DEPOIS (limpa)', folder: 'images' },
+  { key: 'foto-1', label: 'Galeria — Foto 1', folder: 'images' },
+  { key: 'foto-2', label: 'Galeria — Foto 2', folder: 'images' },
+  { key: 'foto-3', label: 'Galeria — Foto 3', folder: 'images' },
+  { key: 'foto-4', label: 'Galeria — Foto 4', folder: 'images' },
+  { key: 'impermeabilizacao', label: 'Impermeabilização (imagem de fundo)', folder: 'images' },
 ]
 
 function ImageSlot({ slotKey, label }: { slotKey: string; label: string }) {
