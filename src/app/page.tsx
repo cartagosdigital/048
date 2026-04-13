@@ -528,7 +528,7 @@ export default function Home() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-4 bg-[#25D366] hover:bg-[#1db954] text-white font-body font-bold text-xl px-12 py-5 rounded-full transition-all hover:scale-105 shadow-2xl shadow-green-900/40"
+                className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1db954] text-white font-body font-bold text-base px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-green-900/30"
               >
                 <WhatsAppIcon size={28} />
                 Pedir Orçamento Grátis
