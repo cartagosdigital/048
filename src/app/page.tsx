@@ -390,37 +390,68 @@ export default function Home() {
                 </div>
               </ScrollReveal>
 
-              {/* Impermeabilização card com imagem */}
+              {/* Impermeabilização card */}
               <ScrollReveal delay={200}>
-                <div className="relative rounded-2xl overflow-hidden border border-cream/10">
+                <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: 420 }}>
                   {/* Imagem de fundo */}
-                  <div className="aspect-[4/3] relative">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src="/images/impermeabilizacao.jpg"
-                      alt="Impermeabilização de estofados"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-navy/60" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/impermeabilizacao.jpg"
+                    alt="Impermeabilização de estofados"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  {/* Overlay degradê: escuro embaixo, transparente em cima */}
+                  <div className="absolute inset-0"
+                    style={{ background: 'linear-gradient(to top, rgba(7,25,82,0.97) 40%, rgba(7,25,82,0.55) 70%, rgba(7,25,82,0.2) 100%)' }}
+                  />
+
+                  {/* Badge topo */}
+                  <div className="absolute top-5 left-5">
+                    <span className="font-body text-xs font-bold tracking-widest uppercase bg-gold/90 text-navy px-3 py-1.5 rounded-full">
+                      Serviço adicional
+                    </span>
                   </div>
-                  {/* Texto sobre a imagem */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gold/20 rounded-full flex items-center justify-center border border-gold/30">
-                      <svg width="32" height="38" viewBox="0 0 40 48" fill="none">
-                        <path d="M20 4 Q30 16 34 28 Q36 40 20 44 Q4 40 6 28 Q10 16 20 4Z" stroke="#D4A843" strokeWidth="2" fill="rgba(212,168,67,0.15)"/>
-                        <path d="M14 34 Q16 38 20 39" stroke="#D4A843" strokeWidth="1.5" strokeLinecap="round"/>
+
+                  {/* Ícone gota animada */}
+                  <div className="absolute top-5 right-5">
+                    <div className="w-14 h-14 rounded-full border border-cream/20 flex items-center justify-center backdrop-blur-sm bg-white/5 drop-animate">
+                      <svg width="28" height="34" viewBox="0 0 40 48" fill="none">
+                        <path d="M20 4 Q30 16 34 28 Q36 40 20 44 Q4 40 6 28 Q10 16 20 4Z" stroke="white" strokeWidth="1.5" fill="rgba(255,255,255,0.12)"/>
+                        <path d="M13 33 Q15 38 20 40" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" strokeLinecap="round"/>
                       </svg>
                     </div>
-                    <h3 className="font-display text-cream text-3xl font-semibold mb-3">
+                  </div>
+
+                  {/* Conteúdo principal — ancorado embaixo */}
+                  <div className="absolute bottom-0 left-0 right-0 p-7">
+                    <h3 className="font-display text-cream font-semibold mb-2"
+                      style={{ fontSize: 'clamp(28px, 3vw, 38px)' }}>
                       Impermeabilização
                     </h3>
-                    <p className="font-body text-cream/75 leading-relaxed mb-6 text-sm">
-                      Proteja seu estofado contra líquidos e manchas após a limpeza.
-                      A gota d'água literalmente escorrega.
+                    <p className="font-body text-cream/65 text-sm leading-relaxed mb-5">
+                      Aplicamos uma barreira invisível que repele líquidos, manchas e gordura.
+                      Proteção que dura <strong className="text-cream/90">até 12 meses</strong>.
                     </p>
-                    <span className="inline-block font-body text-gold text-sm border border-gold/40 rounded-full px-5 py-2 backdrop-blur-sm">
-                      Pergunte sobre este serviço →
-                    </span>
+
+                    {/* Bullets rápidos */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {['Líquidos', 'Manchas', 'Gordura', 'Ácaros'].map((tag) => (
+                        <span key={tag} className="font-body text-xs text-cream/70 border border-cream/20 rounded-full px-3 py-1 backdrop-blur-sm">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* CTA real com WhatsApp */}
+                    <a
+                      href={WA_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1db954] text-white font-body font-bold text-sm px-6 py-3 rounded-full transition-all hover:scale-105"
+                    >
+                      <WhatsAppIcon size={17} />
+                      Quero impermeabilizar
+                    </a>
                   </div>
                 </div>
               </ScrollReveal>
