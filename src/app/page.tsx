@@ -392,18 +392,18 @@ export default function Home() {
 
               {/* Impermeabilização card */}
               <ScrollReveal delay={200}>
-                <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: 420 }}>
+                <div className="relative rounded-2xl overflow-hidden" style={{ minHeight: 560 }}>
                   {/* Imagem de fundo */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/impermeabilizacao.jpg"
                     alt="Impermeabilização de estofados"
                     className="absolute inset-0 w-full h-full object-cover"
-                    style={{ objectPosition: 'center 30%' }}
+                    style={{ objectPosition: 'center center' }}
                   />
-                  {/* Overlay degradê: escuro embaixo, transparente em cima */}
+                  {/* Overlay degradê: escuro só no terço inferior */}
                   <div className="absolute inset-0"
-                    style={{ background: 'linear-gradient(to top, rgba(7,25,82,0.97) 40%, rgba(7,25,82,0.55) 70%, rgba(7,25,82,0.2) 100%)' }}
+                    style={{ background: 'linear-gradient(to top, rgba(7,25,82,0.98) 30%, rgba(7,25,82,0.4) 55%, rgba(7,25,82,0.05) 100%)' }}
                   />
 
                   {/* Badge topo */}
