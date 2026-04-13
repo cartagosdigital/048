@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import BeforeAfterSlider from '@/components/BeforeAfterSlider'
 import ScrollReveal from '@/components/ScrollReveal'
 
@@ -63,83 +62,80 @@ export default function Home() {
 
       <main>
         {/* ──────────────────── HERO ──────────────────── */}
-        <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-navy grain">
-          {/* Background texture */}
-          <div className="absolute inset-0 opacity-5"
-            style={{
-              backgroundImage: `radial-gradient(circle at 20% 50%, #D4A843 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, #0d2470 0%, transparent 40%)`
-            }}
+        <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-navy">
+          {/* Video background */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/videos/hero.mp4" type="video/mp4" />
+          </video>
+
+          {/* Overlay: escurece o vídeo para o texto ficar legível */}
+          <div className="absolute inset-0 bg-navy/70" />
+
+          {/* Gradiente sutil na base */}
+          <div className="absolute bottom-0 left-0 right-0 h-40"
+            style={{ background: 'linear-gradient(to top, rgba(7,25,82,0.6), transparent)' }}
           />
 
-          {/* Large decorative number */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 font-display text-white/4 font-bold leading-none select-none pointer-events-none"
-            style={{ fontSize: 'clamp(200px, 30vw, 400px)' }}>
-            048
-          </div>
-
-          <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left — copy */}
-            <div>
-              <p className="opacity-0-init animate-fade-up delay-100 font-body text-gold tracking-widest text-xs uppercase mb-6">
-                ✦ Kobrasol · Grande Florianópolis
-              </p>
-              <h1 className="opacity-0-init animate-fade-up delay-200 font-display text-cream leading-[1.05] mb-8"
-                style={{ fontSize: 'clamp(48px, 6vw, 88px)' }}>
-                Seu estofado,{' '}
-                <em className="text-gold-light not-italic">renovado.</em>
-              </h1>
-              <p className="opacity-0-init animate-fade-up delay-300 font-body text-cream/70 text-lg leading-relaxed mb-10 max-w-md">
-                Higienização profissional de sofás, poltronas e colchões — sem tirar de casa.
-                Produtos certificados, resultado visível.
-              </p>
-              <div className="opacity-0-init animate-fade-up delay-400 flex flex-col sm:flex-row gap-4">
-                <a
-                  href={WA_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1db954] text-white font-body font-bold text-base px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-green-900/30"
-                >
-                  <WhatsAppIcon size={22} />
-                  Pedir Orçamento Grátis
-                </a>
-                <a
-                  href="#galeria"
-                  className="inline-flex items-center justify-center gap-2 border border-cream/20 text-cream/80 hover:text-cream hover:border-cream/40 font-body text-base px-8 py-4 rounded-full transition-all"
-                >
-                  Ver resultados ↓
-                </a>
-              </div>
-
-              {/* Trust badges */}
-              <div className="opacity-0-init animate-fade-up delay-500 flex gap-8 mt-12 pt-8 border-t border-cream/10">
-                {[
-                  { n: '500+', label: 'Estofados higienizados' },
-                  { n: '5★', label: 'Avaliação média' },
-                  { n: '48h', label: 'Secagem garantida' },
-                ].map((item) => (
-                  <div key={item.n}>
-                    <div className="font-display text-gold-light font-bold" style={{ fontSize: 28 }}>
-                      {item.n}
-                    </div>
-                    <div className="font-body text-cream/50 text-xs mt-0.5">{item.label}</div>
-                  </div>
-                ))}
-              </div>
+          {/* Conteúdo centralizado */}
+          <div className="relative z-10 max-w-3xl mx-auto px-6 py-24 text-center">
+            <p className="opacity-0-init animate-fade-up delay-100 font-body text-gold tracking-widest text-xs uppercase mb-6">
+              ✦ Kobrasol · Grande Florianópolis
+            </p>
+            <h1 className="opacity-0-init animate-fade-up delay-200 font-display text-cream leading-[1.05] mb-6"
+              style={{ fontSize: 'clamp(48px, 6.5vw, 96px)' }}>
+              Seu estofado,{' '}
+              <em className="text-gold-light not-italic">renovado.</em>
+            </h1>
+            <p className="opacity-0-init animate-fade-up delay-300 font-body text-cream/70 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+              Higienização profissional de sofás, poltronas e colchões — sem tirar de casa.
+              Produtos certificados, resultado visível.
+            </p>
+            <div className="opacity-0-init animate-fade-up delay-400 flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1db954] text-white font-body font-bold text-base px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-green-900/30"
+              >
+                <WhatsAppIcon size={22} />
+                Pedir Orçamento Grátis
+              </a>
+              <a
+                href="#galeria"
+                className="inline-flex items-center justify-center gap-2 border border-cream/30 text-cream/80 hover:text-cream hover:border-cream/50 font-body text-base px-8 py-4 rounded-full transition-all backdrop-blur-sm"
+              >
+                Ver resultados ↓
+              </a>
             </div>
 
-            {/* Right — before/after hero */}
-            <div className="opacity-0-init animate-fade-up delay-300 relative">
-              <div className="absolute -inset-4 bg-gold/10 rounded-2xl blur-2xl" />
-              <div className="relative rounded-xl overflow-hidden shadow-2xl">
-                <BeforeAfterSlider
-                  before="/images/antes-1.jpg"
-                  after="/images/depois-1.jpg"
-                />
-              </div>
-              <p className="text-center font-body text-cream/40 text-xs mt-4 tracking-wider">
-                ← Arraste para comparar →
-              </p>
+            {/* Trust badges */}
+            <div className="opacity-0-init animate-fade-up delay-500 flex justify-center gap-10 mt-14 pt-10 border-t border-cream/10">
+              {[
+                { n: '500+', label: 'Estofados higienizados' },
+                { n: '5★', label: 'Avaliação média' },
+                { n: '48h', label: 'Secagem garantida' },
+              ].map((item) => (
+                <div key={item.n} className="text-center">
+                  <div className="font-display text-gold-light font-bold" style={{ fontSize: 28 }}>
+                    {item.n}
+                  </div>
+                  <div className="font-body text-cream/50 text-xs mt-0.5">{item.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Scroll hint */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0-init animate-fade-up delay-600">
+            <div className="flex flex-col items-center gap-2 text-cream/30">
+              <span className="font-body text-xs tracking-widest uppercase">Scroll</span>
+              <div className="w-px h-8 bg-cream/20 animate-bounce" />
             </div>
           </div>
         </section>
@@ -184,7 +180,7 @@ export default function Home() {
                 '/images/foto-2.jpg',
                 '/images/foto-3.jpg',
                 '/images/foto-4.jpg',
-              ].map((src, i) => (
+              ].map((_src, i) => (
                 <ScrollReveal key={i} delay={i * 80}>
                   <div className="aspect-square rounded-lg overflow-hidden bg-sand">
                     <div className="w-full h-full bg-sand/80 flex items-center justify-center">
