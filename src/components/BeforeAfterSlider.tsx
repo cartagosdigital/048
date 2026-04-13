@@ -1,7 +1,6 @@
 'use client'
 
 import { useRef, useState, useCallback } from 'react'
-import Image from 'next/image'
 
 interface BeforeAfterSliderProps {
   before: string
@@ -55,7 +54,8 @@ export default function BeforeAfterSlider({
     >
       {/* Before image */}
       <div className="absolute inset-0">
-        <Image src={before} alt={beforeAlt} fill className="object-cover" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={before} alt={beforeAlt} className="w-full h-full object-cover" />
         <span className="ba-label left-3">Antes</span>
       </div>
 
@@ -64,7 +64,8 @@ export default function BeforeAfterSlider({
         className="after"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
-        <Image src={after} alt={afterAlt} fill className="object-cover" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={after} alt={afterAlt} className="w-full h-full object-cover" />
         <span className="ba-label right-3">Depois</span>
       </div>
 
