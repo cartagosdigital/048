@@ -28,13 +28,13 @@ export default function Home() {
     <>
       {/* ──────────────────── HEADER ──────────────────── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-sand">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between">
           <div className="flex items-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/logo.png"
               alt="048 Higienização de Estofados"
-              className="h-10 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
           </div>
 
@@ -52,7 +52,7 @@ export default function Home() {
 
       <main>
         {/* ──────────────────── HERO ──────────────────── */}
-        <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-navy">
+        <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-navy">
           {/* Video background */}
           <video
             autoPlay
