@@ -3,10 +3,11 @@
 import { useState, useRef, useCallback } from 'react'
 
 const SLOTS = [
-  { key: 'antes-1', label: 'Sofá — ANTES (sujo)' },
-  { key: 'depois-1', label: 'Sofá — DEPOIS (limpo)' },
-  { key: 'antes-2', label: 'Poltrona — ANTES (suja)' },
-  { key: 'depois-2', label: 'Poltrona — DEPOIS (limpa)' },
+  { key: 'logo', label: 'Logo oficial do site', folder: 'images' },
+  { key: 'antes-1', label: 'Sofá — ANTES (sujo)', folder: 'images' },
+  { key: 'depois-1', label: 'Sofá — DEPOIS (limpo)', folder: 'images' },
+  { key: 'antes-2', label: 'Poltrona — ANTES (suja)', folder: 'images' },
+  { key: 'depois-2', label: 'Poltrona — DEPOIS (limpa)', folder: 'images' },
 ]
 
 function ImageSlot({ slotKey, label }: { slotKey: string; label: string }) {

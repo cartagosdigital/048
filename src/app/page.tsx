@@ -29,23 +29,13 @@ export default function Home() {
       {/* ──────────────────── HEADER ──────────────────── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-sand">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 relative">
-              {/* Logo SVG inline — baseado na logo da empresa */}
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <text x="8" y="28" fontFamily="Georgia, serif" fontSize="22" fontWeight="700" fill="#071952">048</text>
-                <path d="M10 55 Q12 42 24 40 L56 40 Q68 42 70 55 Q68 62 40 64 Q12 62 10 55Z" stroke="#071952" strokeWidth="2.5" fill="none"/>
-                <path d="M22 40 L22 38 Q22 32 26 30 L54 30 Q58 32 58 38 L58 40" stroke="#071952" strokeWidth="2.5" fill="none"/>
-                <path d="M18 64 L18 68 L22 68 L22 64" stroke="#071952" strokeWidth="2" fill="none"/>
-                <path d="M58 64 L58 68 L62 68 L62 64" stroke="#071952" strokeWidth="2" fill="none"/>
-                <path d="M38 62 L38 40" stroke="#071952" strokeWidth="1.5"/>
-                <path d="M67 46 L74 40 L67 34" stroke="#071952" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div>
-              <span className="font-display text-navy text-xl font-semibold tracking-wide">048</span>
-              <span className="hidden sm:inline font-body text-navy/60 text-xs ml-2 tracking-widest uppercase">Higienização</span>
-            </div>
+          <div className="flex items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo.png"
+              alt="048 Higienização de Estofados"
+              className="h-10 w-auto object-contain"
+            />
           </div>
 
           <a
@@ -271,14 +261,15 @@ export default function Home() {
                 {
                   icon: (
                     <svg viewBox="0 0 48 48" fill="none" stroke="#071952" strokeWidth="2" className="w-10 h-10">
-                      <path d="M8 38 L8 16 Q8 10 12 8 L36 8 Q40 10 40 16 L40 38"/>
-                      <path d="M4 38 L44 38"/>
-                      <path d="M14 38 L14 24 L34 24 L34 38"/>
-                      <path d="M14 24 Q14 16 18 14 L30 14 Q34 16 34 24"/>
+                      <rect x="6" y="16" width="36" height="20" rx="3"/>
+                      <path d="M6 24 Q14 20 24 24 Q34 28 42 24"/>
+                      <path d="M10 36 L8 42"/>
+                      <path d="M38 36 L40 42"/>
+                      <path d="M6 28 Q14 32 24 28 Q34 24 42 28"/>
                     </svg>
                   ),
-                  title: 'Cabeceiras',
-                  desc: 'Cabeceiras de cama estofadas, com capitonê ou painel liso.',
+                  title: 'Tapetes',
+                  desc: 'Tapetes de todos os tamanhos e materiais — lã, sintético, sisal e mais.',
                 },
                 {
                   icon: (
