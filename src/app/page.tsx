@@ -398,7 +398,8 @@ export default function Home() {
                   <img
                     src="/images/impermeabilizacao.jpg"
                     alt="Impermeabilização de estofados"
-                    className="absolute inset-0 w-full h-full object-cover object-top"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    style={{ objectPosition: 'center 30%' }}
                   />
                   {/* Overlay degradê: escuro embaixo, transparente em cima */}
                   <div className="absolute inset-0"
