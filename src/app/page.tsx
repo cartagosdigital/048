@@ -7,6 +7,11 @@ const WA_NUMBER = '5548999768556'
 const WA_MESSAGE = encodeURIComponent('Olá! Gostaria de um orçamento para higienização do meu estofado.')
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`
 
+function pushWaEvent(location: string) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ;(window as any).dataLayer?.push({ event: 'whatsapp_click', button_location: location })
+}
+
 function WhatsAppIcon({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -42,6 +47,7 @@ export default function Home() {
             href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => pushWaEvent('header')}
             className="flex items-center gap-2 bg-navy text-cream font-body font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-navy-light transition-colors"
           >
             <WhatsAppIcon size={16} />
@@ -91,6 +97,7 @@ export default function Home() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => pushWaEvent('hero')}
                 className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1db954] text-white font-body font-bold text-base px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-green-900/30"
               >
                 <WhatsAppIcon size={22} />
@@ -331,6 +338,7 @@ export default function Home() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => pushWaEvent('como_funciona')}
                 className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1db954] text-white font-body font-bold text-base px-10 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-green-900/20"
               >
                 <WhatsAppIcon size={22} />
@@ -441,6 +449,7 @@ export default function Home() {
                       href={WA_LINK}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => pushWaEvent('diferenciais')}
                       className="inline-flex items-center gap-2.5 bg-[#25D366] hover:bg-[#1db954] text-white font-body font-bold text-sm px-6 py-3 rounded-full transition-all hover:scale-105"
                     >
                       <WhatsAppIcon size={17} />
@@ -553,6 +562,7 @@ export default function Home() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => pushWaEvent('cta_final')}
                 className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1db954] text-white font-body font-bold text-base px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-green-900/30"
               >
                 <WhatsAppIcon size={28} />
@@ -575,6 +585,7 @@ export default function Home() {
           </div>
           <div className="flex gap-6">
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer"
+              onClick={() => pushWaEvent('footer')}
               className="font-body text-cream/40 hover:text-[#25D366] text-sm transition-colors">
               WhatsApp
             </a>
@@ -590,6 +601,7 @@ export default function Home() {
         href={WA_LINK}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => pushWaEvent('float')}
         className="whatsapp-float"
         aria-label="Fale no WhatsApp"
       >
